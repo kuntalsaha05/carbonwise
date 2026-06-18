@@ -1,7 +1,5 @@
 # Walkthrough - CarbonWise Final Submission Audit
 
-![CarbonWise LinkedIn Banner](./assets/banner.png)
-
 We have completed the final quality audit and implementation refinements for CarbonWise to maximize the score across all evaluation categories (Google Services, Security, UI/UX Visual Aesthetics, and SEO Best Practices).
 
 ---
@@ -31,21 +29,15 @@ The application was hosted locally on `http://localhost:8000/`. A final browser 
 Below is the full final recording of the quality audit:
 ![Quality Audit Recording](./assets/audit_run.webp)
 
-### 📸 Verification Screenshots Carousel
+### 📸 Verification Screenshots
 
-````carousel
-![Initial Clean Dashboard](./assets/initial_dashboard.png)
-<!-- slide -->
-![Calculator Inputs](./assets/calculator_food_waste.png)
-<!-- slide -->
-![Dashboard Post-Calculator with Toast](./assets/dashboard_after_calc.png)
-<!-- slide -->
-![Daily Logger Action History](./assets/logger_logged_activity.png)
-<!-- slide -->
-![Gemini AI secure API Setup panel](./assets/gemini_chat_open.png)
-<!-- slide -->
-![Insights View with Embedded Google Map](./assets/insights_tab.png)
-````
+| Initial Clean Dashboard | Calculator Inputs | Dashboard Post-Calculator |
+| :---: | :---: | :---: |
+| ![Initial Clean Dashboard](./assets/initial_dashboard.png) | ![Calculator Inputs](./assets/calculator_food_waste.png) | ![Dashboard Post-Calculator with Toast](./assets/dashboard_after_calc.png) |
+
+| Daily Logger Action History | Gemini AI API Setup | Insights View & Map |
+| :---: | :---: | :---: |
+| ![Daily Logger Action History](./assets/logger_logged_activity.png) | ![Gemini AI secure API Setup panel](./assets/gemini_chat_open.png) | ![Insights View with Embedded Google Map](./assets/insights_tab.png) |
 
 ---
 
@@ -64,11 +56,8 @@ We successfully addressed all accessibility compliance gaps to ensure keyboard n
 Below is the recording showing the keyboard accessibility flow (navigating using Tab/Shift+Tab and selecting using Enter/Space):
 ![Keyboard Accessibility Flow](./assets/accessibility_audit_check.webp)
 
-### 📸 Keyboard Accessibility Carousel
-````carousel
-![Calculator Option Card Focus](./assets/tab_focus_gasoline_car.png)
-<!-- slide -->
-![Daily Logger Template Focus](./assets/logger_vegan_meals_focus.png)
-<!-- slide -->
-![Keyboard Logged Success Toast](./assets/toast_notification.png)
-````
+### 📸 Keyboard Accessibility Screenshots
+
+| Calculator Option Card Focus | Daily Logger Template Focus | Keyboard Logged Success Toast |
+| :---: | :---: | :---: |
+| ![Calculator Option Card Focus](./assets/tab_focus_gasoline_car.png) | ![Daily Logger Template Focus](./assets/logger_vegan_meals_focus.png) | ![Keyboard Logged Success Toast](./assets/toast_notification.png) |
