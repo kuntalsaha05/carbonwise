@@ -99,7 +99,9 @@ class CarbonCalculator {
     ];
 
     this.tempAnswers = {};
-    this.bindEvents();
+    if (typeof document !== 'undefined') {
+      this.bindEvents();
+    }
   }
 
   bindEvents() {
@@ -339,7 +341,9 @@ class CarbonCalculator {
       app.navigateToView('dashboard');
     }, 300);
   }
+if (typeof module !== 'undefined' && module.exports) {
+  module.exports = CarbonCalculator;
+} else {
+  // Instantiate and attach to window
+  window.carbonCalc = new CarbonCalculator();
 }
-
-// Instantiate and attach to window
-window.carbonCalc = new CarbonCalculator();
