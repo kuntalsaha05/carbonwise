@@ -112,7 +112,7 @@ class GeminiAdvisor {
             <input type="password" id="gemini-key-input" class="form-input" placeholder="AIzaSy..." style="width: 100%; font-size: 0.85rem;">
           </div>
           <button id="btn-save-gemini-key" class="btn btn-primary" style="justify-content: center;">Enable Advisor</button>
-          <a href="https://aistudio.google.com/" target="_blank" style="font-size: 0.75rem; color: var(--accent-blue); text-decoration: none;">Get a free API Key from Google AI Studio &rarr;</a>
+          <a href="https://aistudio.google.com/" target="_blank" rel="noopener noreferrer" style="font-size: 0.75rem; color: var(--accent-blue); text-decoration: none;">Get a free API Key from Google AI Studio &rarr;</a>
         </div>
       `;
     } else {

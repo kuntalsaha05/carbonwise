@@ -156,6 +156,7 @@ class EcoLogger {
   }
 
   renderLogs() {
+    if (typeof document === 'undefined') return;
     const container = document.getElementById('activity-logs-container');
     const filterSelect = document.getElementById('log-filter-select');
     if (!container) return;

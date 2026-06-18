@@ -4,7 +4,7 @@
   "description": "Track & Reduce Your Carbon Footprint",
   "main": "app.js",
   "scripts": {
-    "test": "node --test carbon-math.test.js challenges.test.js"
+    "test": "node --test carbon-math.test.js challenges.test.js logger.test.js"
   },
   "keywords": [
     "carbon",

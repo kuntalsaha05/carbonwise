@@ -274,8 +274,7 @@ class ChallengesEngine {
     });
 
     if (completedAny) {
-      // If we are currently on the logger tab, maybe alert them to claim rewards
-      console.log("A challenge is now claimable!");
+      // A challenge is now claimable!
     }
   }
 }
