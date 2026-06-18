@@ -34,31 +34,31 @@
       <nav style="flex-grow: 1;">
         <ul class="nav-menu">
           <li>
-            <a class="nav-link active" data-view="dashboard" id="nav-link-dashboard">
+            <a href="#" class="nav-link active" data-view="dashboard" id="nav-link-dashboard">
               <i data-lucide="layout-dashboard"></i>
               <span>Dashboard</span>
             </a>
           </li>
           <li>
-            <a class="nav-link" data-view="calculator" id="nav-link-calculator">
+            <a href="#" class="nav-link" data-view="calculator" id="nav-link-calculator">
               <i data-lucide="calculator"></i>
               <span>Footprint Calc</span>
             </a>
           </li>
           <li>
-            <a class="nav-link" data-view="logger" id="nav-link-logger">
+            <a href="#" class="nav-link" data-view="logger" id="nav-link-logger">
               <i data-lucide="calendar-days"></i>
               <span>Daily Logger</span>
             </a>
           </li>
           <li>
-            <a class="nav-link" data-view="challenges" id="nav-link-challenges">
+            <a href="#" class="nav-link" data-view="challenges" id="nav-link-challenges">
               <i data-lucide="trophy"></i>
               <span>Eco Challenges</span>
             </a>
           </li>
           <li>
-            <a class="nav-link" data-view="insights" id="nav-link-insights">
+            <a href="#" class="nav-link" data-view="insights" id="nav-link-insights">
               <i data-lucide="lightbulb"></i>
               <span>Insights & Tips</span>
             </a>
@@ -217,32 +217,32 @@
             <h3 style="font-size: 1.15rem; font-weight: 600; margin-bottom: 1.5rem;">Quick Log Templates</h3>
             
             <div class="quick-log-grid">
-              <div class="log-btn-card" data-action="transit-public" style="--accent-color: var(--accent-blue);">
+              <div class="log-btn-card" data-action="transit-public" role="button" tabindex="0" aria-label="Log Public Transit activity" style="--accent-color: var(--accent-blue);">
                 <i data-lucide="bus"></i>
                 <h3>Public Transit</h3>
                 <p>Bus / Train commute</p>
               </div>
-              <div class="log-btn-card" data-action="transit-active" style="--accent-color: var(--accent-emerald);">
+              <div class="log-btn-card" data-action="transit-active" role="button" tabindex="0" aria-label="Log Active Travel activity" style="--accent-color: var(--accent-emerald);">
                 <i data-lucide="bike"></i>
                 <h3>Active Travel</h3>
                 <p>Biking / Walking</p>
               </div>
-              <div class="log-btn-card" data-action="diet-vegan" style="--accent-color: var(--accent-emerald);">
+              <div class="log-btn-card" data-action="diet-vegan" role="button" tabindex="0" aria-label="Log Vegan Meals activity" style="--accent-color: var(--accent-emerald);">
                 <i data-lucide="salad"></i>
                 <h3>Vegan Meals</h3>
                 <p>Zero meat & dairy</p>
               </div>
-              <div class="log-btn-card" data-action="diet-veggie" style="--accent-color: var(--accent-emerald);">
+              <div class="log-btn-card" data-action="diet-veggie" role="button" tabindex="0" aria-label="Log Vegetarian activity" style="--accent-color: var(--accent-emerald);">
                 <i data-lucide="egg"></i>
                 <h3>Vegetarian</h3>
                 <p>No meat today</p>
               </div>
-              <div class="log-btn-card" data-action="energy-unplug" style="--accent-color: var(--accent-amber);">
+              <div class="log-btn-card" data-action="energy-unplug" role="button" tabindex="0" aria-label="Log Power Saving activity" style="--accent-color: var(--accent-amber);">
                 <i data-lucide="plug-zap"></i>
                 <h3>Power Saving</h3>
                 <p>Unplugged standby</p>
               </div>
-              <div class="log-btn-card" data-action="waste-recycle" style="--accent-color: var(--accent-purple);">
+              <div class="log-btn-card" data-action="waste-recycle" role="button" tabindex="0" aria-label="Log Recycled All activity" style="--accent-color: var(--accent-purple);">
                 <i data-lucide="trash-2"></i>
                 <h3>Recycled All</h3>
                 <p>Sorted waste</p>
@@ -428,6 +428,7 @@
   </div>
 
   <!-- Scripts -->
+  <script src="carbon-math.js"></script>
   <script src="app.js"></script>
   <script src="calculator.js"></script>
   <script src="logger.js"></script>

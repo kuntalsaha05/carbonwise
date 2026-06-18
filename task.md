@@ -16,4 +16,9 @@
 - `[x]` Replace native browser alerts with custom glassmorphic Toasts
 - `[x]` Implement auto-text selection on name input focus/click
 - `[x]` Run local server and perform subagent verification tests
+- `[x]` Implement screen-reader utility style class (`.sr-only` in `index.css`)
+- `[x]` Add keyboard support to calculator option cards (`calculator.js`)
+- `[x]` Add keyboard support to quick log templates (`index.html`, `logger.js`)
+- `[x]` Run accessibility & keyboard verification using browser subagent
 - `[x]` Update `walkthrough.md` with verification logs and media
+

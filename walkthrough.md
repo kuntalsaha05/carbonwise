@@ -1,5 +1,7 @@
 # Walkthrough - CarbonWise Final Submission Audit
 
+![CarbonWise LinkedIn Banner](C:/Users/sahak/.gemini/antigravity-ide/brain/b5a1eecb-86be-41a0-b75c-527280f403f2/carbonwise_linkedin_banner_1781767028050.png)
+
 We have completed the final quality audit and implementation refinements for CarbonWise to maximize the score across all evaluation categories (Google Services, Security, UI/UX Visual Aesthetics, and SEO Best Practices).
 
 ---
@@ -43,4 +45,31 @@ Below is the full final recording of the quality audit:
 ![Gemini AI secure API Setup panel](C:/Users/sahak/.gemini/antigravity-ide/brain/b5a1eecb-86be-41a0-b75c-527280f403f2/gemini_chat_open_1781766371699.png)
 <!-- slide -->
 ![Insights View with Embedded Google Map](C:/Users/sahak/.gemini/antigravity-ide/brain/b5a1eecb-86be-41a0-b75c-527280f403f2/insights_tab_1781766392980.png)
+```
+
+---
+
+## ♿ Accessibility & Keyboard Navigation Audit
+
+We successfully addressed all accessibility compliance gaps to ensure keyboard navigation, tab orders, and assistive technologies function flawlessly:
+
+1. **Visually Hidden Labels (`.sr-only`)**: Added screen reader helper text classes to index.css to provide rich semantic text for inputs/elements without modifying visual styles.
+2. **Keyboard Focusable Controls (`tabindex`, `role="button"`)**:
+   - Keyboard tab-focus outlines now properly navigate options in the Calculator (`calculator.js`) and Daily Logger templates (`index.html`).
+   - Bound custom `keydown` listeners targeting the `Enter` and `Space` keys to select option cards.
+3. **Interactive Visual Feedback**:
+   - The browser subagent confirmed that keyboard navigation and tab orders correctly focus and select cards, triggering the corresponding carbon calculation and log templates.
+
+### 🎬 Keyboard Navigation Recording
+Below is the recording showing the keyboard accessibility flow (navigating using Tab/Shift+Tab and selecting using Enter/Space):
+![Keyboard Accessibility Flow](C:/Users/sahak/.gemini/antigravity-ide/brain/b5a1eecb-86be-41a0-b75c-527280f403f2/accessibility_audit_check_1781768396795.webp)
+
+### 📸 Keyboard Accessibility Carousel
+````carousel
+![Calculator Option Card Focus](C:/Users/sahak/.gemini/antigravity-ide/brain/b5a1eecb-86be-41a0-b75c-527280f403f2/tab_focus_gasoline_car_1781768458280.png)
+<!-- slide -->
+![Daily Logger Template Focus](C:/Users/sahak/.gemini/antigravity-ide/brain/b5a1eecb-86be-41a0-b75c-527280f403f2/logger_vegan_meals_focus_1781768568041.png)
+<!-- slide -->
+![Keyboard Logged Success Toast](C:/Users/sahak/.gemini/antigravity-ide/brain/b5a1eecb-86be-41a0-b75c-527280f403f2/toast_notification_1781768573193.png)
 ````
+

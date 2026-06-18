@@ -168,20 +168,21 @@ class CarbonCalculator {
       const escapedVal = window.escapeHtml ? window.escapeHtml(val) : val;
       html += `
         <div class="form-group" style="margin: 2rem 0;">
-          <input type="text" id="calc-text-input" class="form-input" value="${escapedVal}" style="padding: 1rem; font-size: 1.1rem; width: 100%;">
+          <label for="calc-text-input" class="sr-only">Enter your name</label>
+          <input type="text" id="calc-text-input" aria-label="Enter your name" class="form-input" value="${escapedVal}" style="padding: 1rem; font-size: 1.1rem; width: 100%;">
         </div>
       `;
     } 
     else if (stepData.type === 'select-card') {
       const selectedVal = this.tempAnswers[stepData.key];
-      html += `<div class="options-grid">`;
+      html += `<div class="options-grid" role="group" aria-label="${stepData.title}">`;
       
       stepData.options.forEach(opt => {
         const isSelected = selectedVal === opt.value;
         const selectedClass = isSelected ? 'selected' : '';
         html += `
-          <div class="option-card ${selectedClass}" data-value="${opt.value}">
-            <i data-lucide="${opt.icon}"></i>
+          <div class="option-card ${selectedClass}" data-value="${opt.value}" role="button" tabindex="0" aria-pressed="${isSelected}" aria-label="${opt.label}">
+            <i data-lucide="${opt.icon}" aria-hidden="true"></i>
             <span>${opt.label}</span>
           </div>
         `;
@@ -197,8 +198,10 @@ class CarbonCalculator {
             <span style="color: var(--color-text-secondary);">Current Value:</span>
             <span class="slider-val"><span id="slider-bubble">${val}</span> ${stepData.unit}</span>
           </div>
+          <label for="calc-slider" class="sr-only">${stepData.title}</label>
           <input type="range" id="calc-slider" class="custom-slider" 
-                 min="${stepData.min}" max="${stepData.max}" step="${stepData.step}" value="${val}">
+                 min="${stepData.min}" max="${stepData.max}" step="${stepData.step}" value="${val}"
+                 aria-label="${stepData.title}" aria-valuemin="${stepData.min}" aria-valuemax="${stepData.max}" aria-valuenow="${val}" aria-valuetext="${val} ${stepData.unit}">
           <div style="display: flex; justify-content: space-between; font-size: 0.75rem; color: var(--color-text-muted);">
             <span>${stepData.min} ${stepData.unit.split(' ')[0]}</span>
             <span>${stepData.max} ${stepData.unit.split(' ')[0]}</span>
@@ -238,6 +241,13 @@ class CarbonCalculator {
           setTimeout(() => {
             this.nextStep();
           }, 250);
+        });
+
+        card.addEventListener('keydown', (e) => {
+          if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            card.click();
+          }
         });
       });
     } 
@@ -289,60 +299,16 @@ class CarbonCalculator {
   }
 
   submitCalculator() {
-    // Compute Carbon Footprint
+    // Compute Carbon Footprint using CarbonMath utility
     const ans = this.tempAnswers;
+    const MathUtil = window.CarbonMath || CarbonMath;
+    
     const breakdown = {
-      transport: 0,
-      diet: 0,
-      energy: 0,
-      waste: 0
+      transport: MathUtil.calculateTransport(ans.transportType, ans.transportDistance),
+      diet: MathUtil.calculateDiet(ans.dietType),
+      energy: MathUtil.calculateEnergy(ans.energyBill, ans.houseSize),
+      waste: MathUtil.calculateWaste(ans.recycleHabit, ans.wasteVolume)
     };
-
-    // 1. Transportation Footprint (kg CO2e / year)
-    const commuteMilesAnnual = ans.transportDistance * 52;
-    if (ans.transportType === 'gas-car') {
-      breakdown.transport = Math.round(commuteMilesAnnual * 0.411);
-    } else if (ans.transportType === 'electric-car') {
-      breakdown.transport = Math.round(commuteMilesAnnual * 0.150);
-    } else if (ans.transportType === 'public') {
-      breakdown.transport = Math.round(commuteMilesAnnual * 0.120);
-    } else {
-      breakdown.transport = 0; // Walk/Bicycle
-    }
-
-    // 2. Diet Footprint (kg CO2e / year)
-    if (ans.dietType === 'heavy-meat') {
-      breakdown.diet = 3000;
-    } else if (ans.dietType === 'average') {
-      breakdown.diet = 2000;
-    } else if (ans.dietType === 'vegetarian') {
-      breakdown.diet = 1400;
-    } else {
-      breakdown.diet = 900; // Vegan
-    }
-
-    // 3. Energy Footprint (kg CO2e / year)
-    // Assumes US national grid average intensity ($1.5 kg CO2e / dollar)
-    const annualEnergyTotal = ans.energyBill * 12 * 1.5;
-    breakdown.energy = Math.round(annualEnergyTotal / ans.houseSize);
-
-    // 4. Waste & Recycling Footprint (kg CO2e / year)
-    let recycleCredits = 0;
-    if (ans.recycleHabit === 'always') {
-      recycleCredits = -200;
-    } else if (ans.recycleHabit === 'sometimes') {
-      recycleCredits = -50;
-    }
-
-    let foodWasteEmissions = 400;
-    if (ans.wasteVolume === 'low') {
-      foodWasteEmissions = 200;
-    } else if (ans.wasteVolume === 'high') {
-      foodWasteEmissions = 700;
-    }
-
-    breakdown.waste = Math.round(foodWasteEmissions + recycleCredits);
-    if (breakdown.waste < 0) breakdown.waste = 0;
 
     const totalFootprint = breakdown.transport + breakdown.diet + breakdown.energy + breakdown.waste;
 

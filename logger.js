@@ -22,6 +22,13 @@ class EcoLogger {
         const templateKey = card.getAttribute('data-value') || card.getAttribute('data-action');
         this.logQuickTemplate(templateKey);
       });
+
+      card.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          card.click();
+        }
+      });
     });
 
     // Custom Log Form Submit
