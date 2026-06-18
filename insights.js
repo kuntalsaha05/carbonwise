@@ -306,5 +306,10 @@ class InsightsEngine {
   }
 }
 
-// Instantiate and attach to window
-window.insightsEngine = new InsightsEngine();
+if (typeof module !== 'undefined' && module.exports) {
+  module.exports = InsightsEngine;
+} else {
+  // Instantiate and attach to window
+  window.insightsEngine = new InsightsEngine();
+}
+

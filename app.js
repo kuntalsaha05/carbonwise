@@ -63,7 +63,7 @@ const DEFAULT_STATE = {
     energyBill: 0,
     houseSize: 2,
     recycleHabit: 'always',
-    wasteVolume: 2
+    wasteVolume: 'average'
   },
   calculatorFootprint: 0, // kg CO2e per year
   breakdown: {
@@ -78,9 +78,13 @@ const DEFAULT_STATE = {
 
 class CarbonWiseApp {
   constructor() {
-    window.carbonWiseApp = this;
+    if (typeof window !== 'undefined') {
+      window.carbonWiseApp = this;
+    }
     this.state = { ...DEFAULT_STATE };
-    this.init();
+    if (typeof window !== 'undefined') {
+      this.init();
+    }
   }
 
   init() {
@@ -404,4 +408,7 @@ class CarbonWiseApp {
   }
 }
 
-// Class definition complete. Instantiation deferred to index.html DOMContentLoaded.
+if (typeof module !== 'undefined' && module.exports) {
+  module.exports = { CarbonWiseApp, escapeHtml };
+}
+

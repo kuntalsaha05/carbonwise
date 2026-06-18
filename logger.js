@@ -11,7 +11,9 @@ class EcoLogger {
       'waste-recycle': { title: "Recycled All Waste", category: "waste", impactValue: 2.0, points: 10 }
     };
 
-    this.bindEvents();
+    if (typeof document !== 'undefined') {
+      this.bindEvents();
+    }
   }
 
   bindEvents() {
@@ -242,5 +244,9 @@ class EcoLogger {
   }
 }
 
-// Instantiate and attach to window
-window.ecoLogger = new EcoLogger();
+if (typeof module !== 'undefined' && module.exports) {
+  module.exports = EcoLogger;
+} else {
+  // Instantiate and attach to window
+  window.ecoLogger = new EcoLogger();
+}

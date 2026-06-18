@@ -96,7 +96,9 @@ class ChallengesEngine {
     ];
 
     this.activeTab = 'active'; // 'active' or 'completed'
-    this.bindEvents();
+    if (typeof document !== 'undefined') {
+      this.bindEvents();
+    }
   }
 
   bindEvents() {
@@ -278,5 +280,9 @@ class ChallengesEngine {
   }
 }
 
-// Instantiate and attach to window
-window.challengesEngine = new ChallengesEngine();
+if (typeof module !== 'undefined' && module.exports) {
+  module.exports = ChallengesEngine;
+} else {
+  // Instantiate and attach to window
+  window.challengesEngine = new ChallengesEngine();
+}

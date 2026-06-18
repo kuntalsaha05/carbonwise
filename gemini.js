@@ -96,13 +96,13 @@ class GeminiAdvisor {
       container.innerHTML = `
         <div class="gemini-chat-header">
           <div style="display: flex; align-items: center; gap: 0.5rem;">
-            <i data-lucide="sparkles" style="color: var(--accent-blue);"></i>
+            <i data-lucide="sparkles" aria-hidden="true" style="color: var(--accent-blue);"></i>
             <span style="font-weight:600;">Gemini Eco Advisor</span>
           </div>
-          <button id="gemini-chat-close" class="close-modal-btn" style="font-size: 1.25rem;">&times;</button>
+          <button id="gemini-chat-close" aria-label="Close API Key setup" class="close-modal-btn" style="font-size: 1.25rem;">&times;</button>
         </div>
         <div class="gemini-chat-body" style="padding: 1.5rem; display: flex; flex-direction: column; justify-content: center; text-align: center; gap: 1rem;">
-          <i data-lucide="shield-check" style="font-size: 2.5rem; color: var(--accent-emerald); margin: 0 auto;"></i>
+          <i data-lucide="shield-check" aria-hidden="true" style="font-size: 2.5rem; color: var(--accent-emerald); margin: 0 auto;"></i>
           <h3 style="font-size: 1.1rem; font-weight:600;">Secure API Setup</h3>
           <p style="font-size: 0.8rem; color: var(--color-text-secondary); line-height: 1.4;">
             To enable real-time carbon advice, enter your personal Google Gemini API Key. Your key is stored strictly inside your browser and is never uploaded anywhere.
@@ -119,20 +119,20 @@ class GeminiAdvisor {
       container.innerHTML = `
         <div class="gemini-chat-header">
           <div style="display: flex; align-items: center; gap: 0.5rem;">
-            <i data-lucide="sparkles" style="color: var(--accent-blue); animation: pulse 2s infinite;"></i>
+            <i data-lucide="sparkles" aria-hidden="true" style="color: var(--accent-blue); animation: pulse 2s infinite;"></i>
             <span style="font-weight:600;">Gemini Eco Advisor</span>
           </div>
           <div style="display: flex; align-items: center; gap: 0.5rem;">
-            <button id="btn-delete-gemini-key" title="Remove API Key" style="background:none; border:none; color: var(--color-text-muted); cursor:pointer; transition: var(--transition-smooth);"><i data-lucide="key-round" style="width:14px; height:14px;"></i></button>
-            <button id="gemini-chat-close" class="close-modal-btn" style="font-size: 1.25rem;">&times;</button>
+            <button id="btn-delete-gemini-key" title="Remove API Key" aria-label="Remove API Key" style="background:none; border:none; color: var(--color-text-muted); cursor:pointer; transition: var(--transition-smooth);"><i data-lucide="key-round" aria-hidden="true" style="width:14px; height:14px;"></i></button>
+            <button id="gemini-chat-close" class="close-modal-btn" aria-label="Close chat" style="font-size: 1.25rem;">&times;</button>
           </div>
         </div>
-        <div class="gemini-chat-body" id="gemini-messages-list">
+        <div class="gemini-chat-body" id="gemini-messages-list" role="log" aria-label="Chat messages log">
           <!-- Messages will render here -->
         </div>
         <form id="gemini-chat-form" class="gemini-chat-footer">
-          <input type="text" id="gemini-chat-input" placeholder="Ask Gemini..." required autocomplete="off">
-          <button type="submit" class="gemini-send-btn"><i data-lucide="send" style="width: 16px; height: 16px;"></i></button>
+          <input type="text" id="gemini-chat-input" placeholder="Ask Gemini..." aria-label="Ask Gemini advisor a question" required autocomplete="off">
+          <button type="submit" class="gemini-send-btn" aria-label="Send message"><i data-lucide="send" aria-hidden="true" style="width: 16px; height: 16px;"></i></button>
         </form>
       `;
       this.renderMessages();
@@ -279,5 +279,9 @@ Please respond as the CarbonWise Eco Advisor:
   }
 }
 
-// Instantiate and attach to window
-window.geminiAdvisor = new GeminiAdvisor();
+if (typeof module !== 'undefined' && module.exports) {
+  module.exports = GeminiAdvisor;
+} else {
+  // Instantiate and attach to window
+  window.geminiAdvisor = new GeminiAdvisor();
+}
