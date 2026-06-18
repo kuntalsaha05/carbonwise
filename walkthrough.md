@@ -1,6 +1,6 @@
 # Walkthrough - CarbonWise Final Submission Audit
 
-![CarbonWise LinkedIn Banner](C:/Users/sahak/.gemini/antigravity-ide/brain/b5a1eecb-86be-41a0-b75c-527280f403f2/carbonwise_linkedin_banner_1781767028050.png)
+![CarbonWise LinkedIn Banner](./assets/banner.png)
 
 We have completed the final quality audit and implementation refinements for CarbonWise to maximize the score across all evaluation categories (Google Services, Security, UI/UX Visual Aesthetics, and SEO Best Practices).
 
@@ -29,23 +29,23 @@ The application was hosted locally on `http://localhost:8000/`. A final browser 
 
 ### 🎬 Action Recording
 Below is the full final recording of the quality audit:
-![Quality Audit Recording](C:/Users/sahak/.gemini/antigravity-ide/brain/b5a1eecb-86be-41a0-b75c-527280f403f2/carbon_wise_final_audit_run_1781766205009.webp)
+![Quality Audit Recording](./assets/audit_run.webp)
 
 ### 📸 Verification Screenshots Carousel
 
 ````carousel
-![Initial Clean Dashboard](C:/Users/sahak/.gemini/antigravity-ide/brain/b5a1eecb-86be-41a0-b75c-527280f403f2/initial_dashboard_1781766271094.png)
+![Initial Clean Dashboard](./assets/initial_dashboard.png)
 <!-- slide -->
-![Calculator Inputs](C:/Users/sahak/.gemini/antigravity-ide/brain/b5a1eecb-86be-41a0-b75c-527280f403f2/calculator_food_waste_1781766339019.png)
+![Calculator Inputs](./assets/calculator_food_waste.png)
 <!-- slide -->
-![Dashboard Post-Calculator with Toast](C:/Users/sahak/.gemini/antigravity-ide/brain/b5a1eecb-86be-41a0-b75c-527280f403f2/dashboard_after_calc_1781766346563.png)
+![Dashboard Post-Calculator with Toast](./assets/dashboard_after_calc.png)
 <!-- slide -->
-![Daily Logger Action History](C:/Users/sahak/.gemini/antigravity-ide/brain/b5a1eecb-86be-41a0-b75c-527280f403f2/logger_logged_activity_1781766363753.png)
+![Daily Logger Action History](./assets/logger_logged_activity.png)
 <!-- slide -->
-![Gemini AI secure API Setup panel](C:/Users/sahak/.gemini/antigravity-ide/brain/b5a1eecb-86be-41a0-b75c-527280f403f2/gemini_chat_open_1781766371699.png)
+![Gemini AI secure API Setup panel](./assets/gemini_chat_open.png)
 <!-- slide -->
-![Insights View with Embedded Google Map](C:/Users/sahak/.gemini/antigravity-ide/brain/b5a1eecb-86be-41a0-b75c-527280f403f2/insights_tab_1781766392980.png)
-```
+![Insights View with Embedded Google Map](./assets/insights_tab.png)
+````
 
 ---
 
@@ -62,14 +62,13 @@ We successfully addressed all accessibility compliance gaps to ensure keyboard n
 
 ### 🎬 Keyboard Navigation Recording
 Below is the recording showing the keyboard accessibility flow (navigating using Tab/Shift+Tab and selecting using Enter/Space):
-![Keyboard Accessibility Flow](C:/Users/sahak/.gemini/antigravity-ide/brain/b5a1eecb-86be-41a0-b75c-527280f403f2/accessibility_audit_check_1781768396795.webp)
+![Keyboard Accessibility Flow](./assets/accessibility_audit_check.webp)
 
 ### 📸 Keyboard Accessibility Carousel
 ````carousel
-![Calculator Option Card Focus](C:/Users/sahak/.gemini/antigravity-ide/brain/b5a1eecb-86be-41a0-b75c-527280f403f2/tab_focus_gasoline_car_1781768458280.png)
+![Calculator Option Card Focus](./assets/tab_focus_gasoline_car.png)
 <!-- slide -->
-![Daily Logger Template Focus](C:/Users/sahak/.gemini/antigravity-ide/brain/b5a1eecb-86be-41a0-b75c-527280f403f2/logger_vegan_meals_focus_1781768568041.png)
+![Daily Logger Template Focus](./assets/logger_vegan_meals_focus.png)
 <!-- slide -->
-![Keyboard Logged Success Toast](C:/Users/sahak/.gemini/antigravity-ide/brain/b5a1eecb-86be-41a0-b75c-527280f403f2/toast_notification_1781768573193.png)
+![Keyboard Logged Success Toast](./assets/toast_notification.png)
 ````
-
